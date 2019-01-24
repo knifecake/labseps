@@ -10,15 +10,17 @@ class LessonRepository(EntityRepository):
 
     def column_dict(self):
         return {
-            'id': 'INTEGER PRIMARY KEY',
-            'code': 'TEXT',
-            'starts_at': 'TEXT',
-            'ends_at': 'TEXT',
-            'day_of_week': 'INTEGER',
-            'short_name': 'TEXT',
-            'group': 'TEXT',
-            'professors': 'TEXT',
-            'room_id': 'INTEGER'
+            'id'          : 'INTEGER PRIMARY KEY',
+            'short_name'  : 'TEXT',
+            'semester'    : 'INTEGER',
+            'code'        : 'TEXT',
+            'starts_at'   : 'TEXT',
+            'ends_at'     : 'TEXT',
+            'day_of_week' : 'INTEGER',
+            'course_name' : 'TEXT',
+            'group'       : 'TEXT',
+            'professors'  : 'TEXT',
+            'room_id'     : 'INTEGER'
         }
 
     def primary_key(self):

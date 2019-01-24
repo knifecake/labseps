@@ -55,12 +55,23 @@ class EntityRepository:
 
         return self.entity_factory(result)
 
+    def find_by(self, query):
+        """Returns an Entity object representing the record that matches the
+        given hash of attributes. If no record is found it returns None."""
+        condition_string = ', '.join(['"%s" = ?' % f for f in query.keys() if f in self.column_dict().keys()])
+        sql = "SELECT %s FROM %s WHERE %s LIMIT 1" % (self.generate_column_list(), self.table_name(), condition_string)
+        self.c.execute(sql, tuple(query.values()))
+        result = self.c.fetchone()
+        if result == None: return None
+
+        return self.entity_factory(self.tuple_to_dict(result))
+
     def insert(self, ent):
         """Inserts a record into the database. Returns the primary key of the
         inserted record."""
-        fields = [f for f in self.column_dict().keys() if f != self.primary_key()]
+        fields = ['"%s"' % f for f in self.column_dict().keys() if f != self.primary_key()]
         query = 'INSERT INTO %s (%s) VALUES (%s)' % (self.table_name(), ', '.join(fields), ', '.join(list('?' * len(fields))))
-        self.c.execute(query, tuple([ent[f] for f in fields]))
+        self.c.execute(query, tuple([ent[f] for f in self.column_dict().keys() if f != self.primary_key()]))
         self.dbc.commit()
         return self.c.lastrowid
 
@@ -77,7 +88,15 @@ class EntityRepository:
         self.c.execute('DELETE FROM %s WHERE %s = ?' % (self.table_name(), self.primary_key()), str(ent[self.primary_key()]))
         self.dbc.commit()
 
+    def remove_duplicates(self):
+        """Removes duplicate rows from a table. Duplicate as in they have the
+        same value for every column but the primary key."""
+        query = 'DELETE FROM %s WHERE rowid NOT IN (SELECT MIN(rowid) FROM %s GROUP BY %s)' % (self.table_name(), self.table_name(), self.generate_column_list())
+        self.c.execute(query)
+        self.dbc.commit()
 
+
+    # TODO: move inside the find method
     def find_dict(self, id):
         """Returns a dictionary of column name-value pairs with the attributes
         of the record with the given primary key. If no record is found it

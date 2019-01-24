@@ -58,11 +58,13 @@ name        | string       | *Aula* in time slot detail
 
 Field name  | Field Type   | Source
 ----------- | ------------ | -------
+short_name  | string       | Content of the `td` element in the main table
+semester    | integer      | Content of the `h1` element in the main table
 code        | string       | `onclick` handler first argument
 starts_at   | string       | `onclick` handler second argument
 ends_at     | string       | `onclick` handler third arguement
 day_of_week | integer      | `onclick` handler fourth argument
-short_name  | string       | *Asignatura* in time slot detail
+course_name | string       | *Asignatura* in time slot detail
 group       | string       | *Grupo* in time slot detail
 professors  | string       | *Profesores* in time slot detail
 room_id     | integer      | *Aula* in time slot detail
