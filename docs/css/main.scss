@@ -18,6 +18,14 @@ html, body {
 body {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 18px;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+a { text-decoration: none; }
+
+a:visited {
+  color: inherit;
 }
 
 .container {
@@ -68,4 +76,8 @@ input[type="submit"] {
   appearance: none;
   border-radius: $border-radius;
   border: 1px solid darken($accent, 10%);
+}
+
+input[type="radio"] {
+  height: 1rem;
 }

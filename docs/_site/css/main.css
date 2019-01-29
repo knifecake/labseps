@@ -6,7 +6,15 @@ html, body {
 
 body {
   font-family: "Helvetica Neue", sans-serif;
-  font-size: 18px; }
+  font-size: 18px;
+  max-width: 30rem;
+  margin: 0 auto; }
+
+a {
+  text-decoration: none; }
+
+a:visited {
+  color: inherit; }
 
 .container {
   padding: 0 1rem; }
@@ -46,3 +54,6 @@ input[type="submit"] {
   appearance: none;
   border-radius: 2px;
   border: 1px solid #cca500; }
+
+input[type="radio"] {
+  height: 1rem; }

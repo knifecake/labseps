@@ -13,7 +13,7 @@
   </head>
   <body>
     <header class="text-centered">
-      <h1>🖥 Labs EPS</h1>
+      <a href="/"><h1>🖥 Labs EPS</h1></a>
       <p>Busca laboratorios libres en la EPS</p>
     </header>
     <div class="container">
@@ -34,7 +34,7 @@
 
 <section id="search">
   <p>Busca laboratorios en otros horarios:</p>
-  <form>
+  <form class="text-centered">
     <select style="width: 35%" required name="day" id="day-select">
       <option value="">Día</option>
       <option value="0">Lunes</option>
@@ -60,6 +60,14 @@
     </select>
 
     <input style="width:30%" type="submit" value="Buscar">
+    <label for="semester-1">
+      <input required id="semester-1" type="radio" name="semester" value="1">
+      1<sup>er</sup> cuatri.
+    </label>
+    <label for="semester-2">
+      <input required id="semester-2" type="radio" name="semester" value="2">
+      2º cuatri.
+    </label>
   </form>
 </section>
 
@@ -67,7 +75,8 @@
 
 
       <footer>
-        <p>Built by <a href="https://hernandis.me">Elias Hernandis</a>.</p>
+        <p><a href="https://github.com/knifecake/labseps/issues">Ves errores? Sugerencias?</a></p>
+        <p>Built by <a href="https://hernandis.me">Elias Hernandis</a>. Hosted on <a href="https://github.com/knifecake/labseps">GitHub</a>.</p>
       </footer>
     </div>
   </body>

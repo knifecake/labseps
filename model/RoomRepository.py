@@ -17,16 +17,16 @@ class RoomRepository(EntityRepository):
     def entity_factory(self, attrs):
         return Room(attrs)
 
-    def get_free_rooms_between(self, day_of_week, start_time, end_time):
+    def get_free_rooms_between(self, semester, day_of_week, start_time, end_time):
         """Returns free rooms between the specified times."""
-        sql = 'SELECT * FROM %s WHERE id NOT IN (SELECT room_id FROM lessons WHERE starts_at <= ? AND ends_at >= ? AND day_of_week = ?)' % self.table_name()
-        results = self.c.execute(sql, (end_time, start_time, day_of_week))
+        sql = 'SELECT * FROM %s WHERE id NOT IN (SELECT room_id FROM lessons WHERE starts_at < ? AND ends_at > ? AND day_of_week = ? AND semester = ?)' % self.table_name()
+        results = self.c.execute(sql, (end_time, start_time, day_of_week, semester))
 
         return list(map(self.entity_factory, map(self.tuple_to_dict, results)))
 
-    def get_free_labs_between(self, day_of_week, start_time, end_time):
+    def get_free_labs_between(self, semester, day_of_week, start_time, end_time):
         """Returns free labs between the specified times."""
-        sql = "SELECT * FROM %s WHERE name LIKE %s AND name NOT LIKE %s AND id NOT IN (SELECT room_id FROM lessons WHERE starts_at <= ? AND ends_at >= ? AND day_of_week = ?)" % (self.table_name(), "'Laboratorio %'", "'Laboratorio C%'")
-        results = self.c.execute(sql, (end_time, start_time, day_of_week))
+        sql = "SELECT * FROM %s WHERE name LIKE %s AND name NOT LIKE %s AND id NOT IN (SELECT room_id FROM lessons WHERE starts_at < ? AND ends_at > ? AND day_of_week = ? AND semester = ?)" % (self.table_name(), "'Laboratorio %'", "'Laboratorio C%'")
+        results = self.c.execute(sql, (end_time, start_time, day_of_week, semester))
 
         return list(map(self.entity_factory, map(self.tuple_to_dict, results)))
