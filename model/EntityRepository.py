@@ -3,7 +3,7 @@ import sqlite3
 class EntityRepository:
     def __init__(self, connection_string):
         self.dbc = sqlite3.connect(connection_string)
-        self.dbc.set_trace_callback(print)
+        # self.dbc.set_trace_callback(print)
         self.c = self.dbc.cursor()
 
     def close_connection(self):
