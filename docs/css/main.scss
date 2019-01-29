@@ -1,0 +1,71 @@
+---
+---
+
+$gray-light: #999;
+$gray-lighter: #eee;
+$accent: #ffce00;
+
+$border-radius: 2px;
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 18px;
+}
+
+.container {
+  padding: 0 1rem;
+}
+
+section {
+  padding: 1rem 0;
+  border-top: 1px solid $gray-lighter;
+}
+
+footer {
+  text-align: center;
+  border-top: 1px solid $gray-lighter;
+  color: $gray-light;
+  padding-bottom: 1rem;
+
+  a { color: $gray-light; }
+}
+
+.text-centered {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  td, th {
+    border: 1px solid black;
+    padding: 0.3rem;
+  }
+
+  th {
+    background-color: $accent;
+  }
+}
+
+input, select {
+  height: 2rem;
+}
+
+input[type="submit"] {
+  background-color: $accent;
+  color: black;
+  font-weight: bold;
+  --webkit-appearance: none;
+  appearance: none;
+  border-radius: $border-radius;
+  border: 1px solid darken($accent, 10%);
+}

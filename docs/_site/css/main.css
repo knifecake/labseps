@@ -1,0 +1,48 @@
+*, ::before, ::after {
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%; }
+
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 18px; }
+
+.container {
+  padding: 0 1rem; }
+
+section {
+  padding: 1rem 0;
+  border-top: 1px solid #eee; }
+
+footer {
+  text-align: center;
+  border-top: 1px solid #eee;
+  color: #999;
+  padding-bottom: 1rem; }
+  footer a {
+    color: #999; }
+
+.text-centered {
+  text-align: center; }
+
+table {
+  width: 100%;
+  border-collapse: collapse; }
+  table td, table th {
+    border: 1px solid black;
+    padding: 0.3rem; }
+  table th {
+    background-color: #ffce00; }
+
+input, select {
+  height: 2rem; }
+
+input[type="submit"] {
+  background-color: #ffce00;
+  color: black;
+  font-weight: bold;
+  --webkit-appearance: none;
+  appearance: none;
+  border-radius: 2px;
+  border: 1px solid #cca500; }

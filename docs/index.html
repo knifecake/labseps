@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+<section id="results">
+  <p id="query-description"></p>
+
+  <div id="result-section">
+    <table>
+      <thead>
+        <th>Laboratorio</th>
+        <th>Libre hasta las</th>
+      </thead>
+      <tbody id="result-tbody">
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="search">
+  <p>Busca laboratorios en otros horarios:</p>
+  <form>
+    <select style="width: 35%" required name="day" id="day-select">
+      <option value="">Día</option>
+      <option value="0">Lunes</option>
+      <option value="1">Martes</option>
+      <option value="2">Miércoles</option>
+      <option value="3">Jueves</option>
+      <option value="4">Viernes</option>
+    </select>
+
+    <select style="width: 30%" required name="hour" id="hour-select">
+      <option value="">Hora</option>
+      <option value="9">09:00</option>
+      <option value="10">10:00</option>
+      <option value="11">11:00</option>
+      <option value="12">12:00</option>
+      <option value="13">13:00</option>
+      <option value="14">14:00</option>
+      <option value="15">15:00</option>
+      <option value="16">16:00</option>
+      <option value="17">17:00</option>
+      <option value="18">18:00</option>
+      <option value="19">19:00</option>
+    </select>
+
+    <input style="width:30%" type="submit" value="Buscar">
+  </form>
+</section>
+
+<script src="{{ site.baseurl }}/js/search.js"></script>
