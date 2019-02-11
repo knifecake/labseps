@@ -33,7 +33,7 @@ class EntityRepository:
 
     def generate_column_list(self):
         """Generates a comma-separated list of column names ready to be plugged into an SQL query"""
-        return ', '.join(list(self.column_dict().keys()))
+        return ', '.join(["'%s'" % k for k in self.column_dict().keys()])
 
     def setup_table(self):
         """Creates the table in the database if it does not already exist."""

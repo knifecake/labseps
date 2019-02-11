@@ -1,4 +1,4 @@
-'https://intranet.eps.uam.es/Publico/Estudios/ConsultaHorarios/HorarioEspecifico?PlanEstudios=Doble%20Grado%20en%20Ingenier%C3%ADa%20Informática-Matemáticas&Curso=1&xdm_e=http:%2F%2Fwww.uam.es&xdm_c=default4442&xdm_p=1
+https://intranet.eps.uam.es/Publico/Estudios/ConsultaHorarios/HorarioEspecifico?PlanEstudios=Doble%20Grado%20en%20Ingenier%C3%ADa%20Informática-Matemáticas&Curso=1&xdm_e=http:%2F%2Fwww.uam.es&xdm_c=default4442&xdm_p=1
 https://intranet.eps.uam.es/Publico/Estudios/ConsultaHorarios/HorarioEspecifico?PlanEstudios=Doble%20Grado%20en%20Ingenier%C3%ADa%20Informática-Matemáticas&Curso=2&xdm_e=http:%2F%2Fwww.uam.es&xdm_c=default2605&xdm_p=1
 https://intranet.eps.uam.es/Publico/Estudios/ConsultaHorarios/HorarioEspecifico?PlanEstudios=Doble%20Grado%20en%20Ingenier%C3%ADa%20Informática-Matemáticas&Curso=3&xdm_e=http:%2F%2Fwww.uam.es&xdm_c=default6656&xdm_p=1
 https://intranet.eps.uam.es/Publico/Estudios/ConsultaHorarios/HorarioEspecifico?PlanEstudios=Doble%20Grado%20en%20Ingenier%C3%ADa%20Informática-Matemáticas&Curso=4&xdm_e=http:%2F%2Fwww.uam.es&xdm_c=default3704&xdm_p=1
